@@ -1,0 +1,93 @@
+body {
+	min-width: 976px;
+	background-color: #E8DDCB;
+	color: #444444;
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+}
+
+a:link {
+	color: #036564;
+}
+
+a:active {
+	color: #000000;
+}
+
+a:visited {
+	color: #036564;
+}
+
+a:hover {
+	color: #000000;
+	background: none;
+}
+
+input.textField, select.selectMenu, textarea.textArea, input.uploadField {
+	background-color: #eeeeee;
+}
+
+input.defaultButton {
+	background-color: #000000;
+	color: #ffffff;
+}
+
+#header {
+	background-color: #036564;
+}
+
+#header h1 {
+	margin-left: 225px;
+	padding: 0px;
+}
+
+#main {
+	margin-left: 65px;
+	width: 749px;
+	background-color: #ffffff;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+#navbar {
+	padding-left: 15px;
+	border-bottom: 1px solid black;
+}
+
+#breadcrumb {
+	padding-left: 15px;
+	padding-bottom: 10px;
+}
+
+h2, h3, h4 {
+	padding-left: 15px;
+}
+
+#content {
+	padding-top: 0em;
+	padding-left: 15px;
+	padding-right: 15px;
+	border-top: 0px dotted #000;
+}
+
+#content h3 {
+	text-align: left;
+	padding-left: 0px;
+}
+
+#content h4 {
+	padding-left: 0px;
+}
+
+#sidebar {
+	padding-left: 10px;
+	margin: 0px;
+	width: 150px;
+    float: left;
+}
+
+#rightSidebar {
+	margin: 0px;
+	width: 100%;
+    float: none;
+}

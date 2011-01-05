@@ -1,0 +1,1189 @@
+@media print {
+html {
+	width: 100%;
+	height: 100%;
+	border: none; 
+	margin: 0in; 
+	padding: 0in !important; 
+	}
+
+body {
+	width: 100%;
+	height: 100%;
+	font-family: Arial, helvetica, helvetica-neue, verdana, sans-serif;
+	border: none;
+	margin: 0in;
+	padding: 0in !important; 
+/*
+	overflow: visible;
+	overflow-x: visible;
+	overflow-y: visible;
+*/
+	/* added per editor request 9/21/2009 */
+	font-size: medium;
+	}
+
+body * {
+	/* added per editor request 9/21/2009 */
+	font-size: medium;
+	}
+
+#header {
+	width: 7in;
+	border: none; 
+	margin: 0in; 
+	padding: 0in; 
+	text-align: center;
+	border: none;
+	padding: 0px;
+	}
+	
+#headerTitle {
+	width: 7in;
+	border: none;
+	font-family: Arial, helvetica, helvetica-neue, verdana, sans-serif;
+	margin: 0in; 
+	padding: 0in; 
+	}
+#headerTitle img {
+width:100%;
+
+}
+	
+#footer {
+	width: 7in;
+	border: none; 
+	margin: 0in; 
+	padding: 0in; 
+/*
+	clear: both;
+*/
+	}
+.debugStats {
+	display:none;
+}
+
+* {
+	overflow:visible !important;
+}
+
+#container {
+	min-width: 150px !important;
+	width: 100%;
+	border: none !important; border-top: none !important; border-right: none !important; border-bottom: none !important; border-left: none !important;
+	margin: 0in; margin-top: 0in; margin-right: 0in; margin-bottom: 0in; margin-left: 0in;
+	padding: 0in; padding-top: 0in; padding-right: 0in; padding-bottom: 0in; padding-left: 0in;
+/*
+	height: 100%;
+	overflow: visible;
+*/
+	}
+
+#body {
+	height: 100%;
+	width: 100%;
+	border: none; 
+	margin: 0in; 
+	padding: 0in;
+	background-color: #fefefe;
+	}
+
+#main {
+	width: 100%;
+	border: none;
+	margin: 0in; margin-top: 0in; margin-right: 0in; margin-bottom: 0in; margin-left: 0in;
+	padding: 0in; padding-top: 0in; padding-right: 0in; padding-bottom: 0in; padding-left: 0in;
+	height: 100%;
+	background-color: #fefefe;
+	float: none;
+	}
+
+#content {
+	width: 100%;
+	border: none; border-top: none; border-right: none; border-bottom: none; border-left: none;
+	margin: 0in; margin-top: 0in; margin-right: 0in; margin-bottom: 0in; margin-left: 0in;
+	padding: 0in; padding-top: 0in; padding-right: 0in; padding-bottom: 0in; padding-left: 0in;
+	}
+
+#navbar, #navbar *, #sidebar {
+	display: none;
+/*	visibility: hidden;
+	height: 1.5em;
+	width: 100%;
+	border: none;
+	text-align: center;
+	padding: 0px;
+	margin: 0px;*/
+	}
+
+#container #navbar * {
+	/* added per editor request 9/21/2009 */
+	font-size: 90%;
+	}
+
+#breadcrumb {
+	display: none;
+	visibility: hidden;
+	height: 18px;
+	line-height: 1.5em;
+	text-align: left;
+	padding: 0;
+	font-style: italic;
+	}
+	
+#breadcrumb a:hover {
+	text-decoration: none;
+}
+
+#rightSideBar {
+	display: none;
+	visibility: hidden;
+	}
+	
+#topBar {
+	display: none;
+	}
+
+} /* @media print */
+
+html {
+	background-color: #fefefe;
+	height: 100%;
+	padding-left: 100px;
+	padding-right: 100px;
+	}
+
+body {
+/* default values from classicBlue.css
+	background-color: #fff;*/
+	height: 100%;
+	text-align: left;
+	background-color: #fefefe;
+	font-family: Arial, Helvetica, sans-serif;
+/*
+	margin-left: 100px;
+	margin-right: 100px;
+	overflow-x: visible;
+	overflow-y: visible;
+	min-height: 1000px;
+	margin-left: 17%;
+	margin-right: 17%;
+	font-size: small;
+	*/
+	}
+
+	/* added per editor request 9/21/2009 */
+body * {
+	font-size: medium;
+	line-height: 120%;
+	}
+
+/* header definitions */
+h1, h2, h3, h4, h5, h6  {  }
+h1 { font-size: 130%; }
+h2 { font-size: 120%; }
+h3 { font-size: 115%; }
+h4 { font-size: 110%; }
+h5 { font-size: 106%; }
+h6 { font-size: 103%; }
+
+a {
+/* default values from classicBlue.css
+	text-decoration: none;*/
+	text-decoration: none;
+	}
+
+a:link {
+/* default values from classicBlue.css
+	color: #069;*/
+	color: #005A96;
+	}
+
+a:active {
+/* default values from classicBlue.css
+	color: #39c;*/
+	color: #005A96;
+	}
+
+a:visited {
+/* default values from classicBlue.css
+	color: #069;*/
+	color: #00406A;
+	}
+
+a:hover {
+/* default values from classicBlue.css
+	color: #EEEEFF;
+	background: #069;*/
+    border-bottom: 3px solid #005A96;
+    text-decoration:none;	
+	background-color: #fefefe;
+	}
+
+label.error {
+/* default values from classicBlue.css*/
+	color: #f60;
+
+	}
+
+input.defaultButton {
+/* default values from classicBlue.css*/
+	color: #EEEEFF;
+	background: #069;
+
+	}
+
+@media screen {
+#container {
+	overflow: auto;
+	}
+body {
+	overflow: auto;
+	}
+/*
+*/
+} /* @media screen */
+
+
+#container {
+	width: 800px;
+	background-color: white;
+	margin-right: 14%;
+	border: none;
+	padding: 1em;
+/* 
+	min-height: 100%;
+	background-color: #fff;
+	font-size: 1em;
+	overflow: visible;
+	height: 100%;
+	padding-top: 0px;
+	padding-left: 0px;
+	min-height: 1000px;
+	height: 150%;
+	margin-left: 10%;
+*/
+	}
+
+#header {
+/* default values from classicBlue.css
+	height:  100px;
+	background-color: #fff;*/
+	height: 100px;
+	width: 700px;
+	background-color: #fefefe;
+	text-align: center;
+	border: none;
+	padding: 0px;
+	margin-bottom: 0px;
+	}
+#header img {
+	border: none;
+	text-align: center;
+	padding-bottom: .2em;
+	border-bottom: 5px solid #555555;
+	}
+#headerTitle {
+/* default values from classicBlue.css
+	text-align: center;*/
+	width: 700px;
+	padding: 0px;
+	border: none;
+	}
+
+#header h1 {
+/* default values from classicBlue.css
+	line-height: 2.5;
+	font-family: "Times New Roman", Times, Georgia, serif;
+	text-transform: uppercase;
+	letter-spacing: 10px;
+	font-size: 2em;
+	background-color: #069;
+	color:  #fff;*/
+	background-color: #fefefe;
+	text-align: center;
+	padding: 0px;
+	text-transform: capitalize;
+	}
+
+#footer {
+/* default values from classicBlue.css
+	background-color: #069;
+	color:  #fff;*/
+	clear:both;
+	width: 7in;
+	border: none; border-top: none; border-right: none; border-bottom: none; border-left: none;
+	margin: 0in; margin-top: 0in; margin-right: 0in; margin-bottom: 0in; margin-left: 0in;
+	padding: 0.5in; padding-top: 0in; padding-right: 0in; padding-bottom: 0in; padding-left: 0in;
+	}
+
+#footerContent {
+/* default values from classicBlue.css
+	color:  #fff;*/
+	text-align: center;
+	}
+
+#body {
+	height: 100%;
+	width: 800px;
+	border: none;
+	margin: 0in; 
+	padding: 0in;
+	}
+
+#main {
+	min-width: 600px;
+	background-color: #fefefe;
+	float: left;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-right: 5px;
+	}
+
+#main h2 {
+/* default values from classicBlue.css
+	font-family: "Times New Roman", Times, Georgia, serif;
+	text-transform: uppercase;*/
+	text-transform: capitalize;
+	color: #555555;
+	font-family: Arial, helvetica, helvetica-neue, sans-serif;
+	text-decoration: none;
+	}
+
+#main h3 {
+/* default values from classicBlue.css
+	font-family: "Times New Roman", Times, Georgia, serif;
+	text-transform: uppercase;*/
+	text-transform: capitalize;
+	}
+
+#navbar {
+/* default values from classicBlue.css
+	text-align: center;
+	margin-left: -1.1em;
+	overflow: auto;
+	border: 3px solid gray;
+	*/
+	display: block;
+	list-style-type: square;
+	text-align: left;
+	background-color: #fefefe;
+	margin: 0 auto;
+	border: none;
+	padding-top: 2em;
+	padding-bottom: 2em;
+	clear: left;
+	}
+#container #navbar * {
+	/* added per editor request 9/21/2009 */
+	font-size: 105%;
+	font-family: arial, helvetica, helvetica-neue, verdana;
+	text-transform: capitalize;
+	color: #005A96;
+	padding: 5px;
+	margin: 0 auto;
+	}
+
+	#navbar ul {
+		width: 790px;
+		height: 100%;
+		border: none;
+		padding: 0px;
+		margin: 0px;
+		text-align: right;
+		list-style-type: square;
+	}
+	#navbar li {
+		display: block;
+		float: left;
+		height: 98%;
+		vertical-align: top;
+		color: #005A96;
+		text-transform: capitalize;
+		padding: 0em;
+		text-align: center;
+		list-style-type: square;
+		}
+	#navbar li:hover {
+		color: #000099;
+		text-decoration: underline;
+		
+		}
+	#navbar a {
+		font-weight: bold;
+		padding: 0px;
+		margin: 0px;
+		}
+	#navbar a:hover {
+		text-decoration: none;
+		}
+
+#breadcrumb {
+/* default values from classicBlue.css
+	height: 18px;
+	line-height: 1.5em;
+	text-align: center;
+	padding: 0;
+	clear: left;
+	*/
+	text-transform: capitalize;
+	font-size: 0.575em;
+	color: #555555;
+	text-align: left;
+	}
+
+#content {
+/* default values from classicBlue.css*/
+	border:none;
+	padding: 0;
+	width: 600px;
+	}
+
+#content h3 {
+/* default values from classicBlue.css
+	font-family:  "Times New Roman", Times, Georgia, serif;
+	text-transform: uppercase;*/
+	text-transform:capitalize;
+	font-family: arial, helvetica, helvetica-neue, sans-serif;
+	color: #005A96;
+	line-height: normal;
+	}
+
+#content h4 {
+/* default values from classicBlue.css
+	font-family:  "Times New Roman", Times, Georgia, serif;
+	text-transform: uppercase;*/
+	text-transform: capitalize;
+	font-family: arial, helvetica, helvetica-neue, sans-serif;
+	font-size: 115%;
+	color: #222222;
+	}
+
+#content h5 {
+/* default values from classicBlue.css
+	text-transform: uppercase;*/
+	text-transform: capitalize;
+	font-family: arial, helvetica, helvetica-neue, sans-serif;
+	}
+	
+	
+table.tocArticle td.tocGalleys{
+	font-family: Arial Black, Arial, helvetica, helvetica-neue, sans-serif;
+	font-size: 1em;
+	padding-top: .75em;
+}
+
+table.tocArticle td.tocTitle li {
+	clear:left;
+	height:1.05em;
+	margin-top:10px;
+	position:relative;
+	
+}
+
+table.tocArticle td.tocTitle {
+	padding-top: .75em;
+}
+
+table.tocArticle td.tocAuthor{
+	padding-left: 50px;
+}
+
+
+table.tocArticle td.tocTitle a, table.tocArticle.span td.tocTitle{
+	background:#fff;
+	padding:0 3px 0 0;
+	float:left;
+	position:absolute;
+	text-decoration:none;
+}
+
+table.tocArticle td.tocTitle a{
+	padding:0 0 0 3px;
+	right:0;
+}
+	
+table.tocArticle td.tocTitle ol{
+	list-style:lower-roman;
+	margin:1.5em 0 1em 5%;
+	padding:0;
+	background:#fff;
+	float:left;
+	display:block;
+	width:95%;
+}
+
+span.highlight {
+/* default values from classicBlue.css*/
+	text-decoration: none;
+	}
+
+table.listing tr.highlight {
+/* default values from classicBlue.css
+	background: #fcff64;*/
+	text-decoration: none;
+	}
+
+table.listing tr.fastTracked {
+/* default values from classicBlue.css
+	background-color: #EEEEFF;*/
+	text-decoration: none;
+	}
+
+table.listing td.headseparator {
+/* default values from classicBlue.css*/
+	text-decoration:none;
+	}
+
+table.listing td.endseparator {
+/* default values from classicBlue.css*/
+	text-decoration:none;
+	}
+
+table.listing td.separator, table.info td.separator {
+	text-decoration: none;
+}
+
+span.formError {
+/* default values from classicBlue.css
+	color: #f60;*/
+	text-decoration: none;
+	}
+
+ul.formErrorList {
+/* default values from classicBlue.css
+	color: #f60;*/
+	text-decoration: none;
+	}
+
+div.separator {
+/* default values from classicBlue.css*/
+	text-decoration:none;
+	}
+	
+#sidebarFontSize img{
+	padding-top: .7em;
+}
+	
+#sidebar div.block span.blockTitle {
+	display: block;
+	padding: .15em;
+	font-family: Arial, Helvetica, Helvetic-Neue, Verdana;
+	font-size: 1.8em;
+	color: #555555;
+	letter-spacing: -0.1em;
+	border-bottom: 5px solid #555555;
+	text-transform: capitalize;
+	text-decoration: none;
+}
+
+#sidebar div.block span.blockSubtitle {
+	display: block;
+	padding: 0.5em 0 0.5em 0;
+	font-size: 1.3em;
+	font-family: arial, helvetica, helvetica-neue, verdana;
+	text-transform: capitalize;
+}
+
+#sidebar {
+/* default values from classicBlue.css
+	margin-top: 5px;*/
+	}
+#rightSidebar, #leftSidebar {
+/* default values from classicBlue.css
+	margin-top: 5px;*/
+	background-color: #fefefe;
+	padding-top: 7em;
+	}
+#rightSidebar {
+/* default values from classicBlue.css
+	margin-top: 5px;*/
+	width: 150px;
+	padding: 3px 5px;
+	margin-top: 35px;
+	margin-right: 5px;
+	margin-left: 0px;
+	float: right;
+	}
+
+#rightSidebar ul, #leftSidebar ul {
+/* default values from classicBlue.css
+	margin-left: 0px;
+	padding-left: 0px;*/
+	}
+
+#rightSidebar li, #leftSidebar li {
+/* default values from classicBlue.css
+	list-style-type: none;*/
+	list-style-type: square;
+	}
+	
+#developedBy {
+	text-transform: capitalize;
+	font-size: 1.5em;
+}
+
+/* * * * * * * * * * * * * * * *
+ABOVE THIS LINE ARE STYLES FOR SITE-WIDE
+
+BELOW THIS LINE ARE STYLES FOR dsq ITEMS
+* * * * * * * * * * * * * * * */
+#dsqitem {
+/*
+*/
+	padding-left: 5px;
+	margin-left: 30px;
+	margin-right: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #fefefe;
+	}
+	#dsqitem #navbar {
+		margin-left: -5px;
+		}
+
+#dsqitem a:hover {
+	color: #ff0000;
+	}
+
+		/* STYLES FOR HEADINGS */
+#dsqitem h1 { /* styles for the title of the Journal */
+	text-align: left;
+	font-weight: bold;
+	font-size: 125%;
+	}
+
+	#dsqitem h1.dsqmasthead span { /* style to create a text version of the logo */
+		display: block;
+		}
+	
+	#dsqitem .issueinfo { /* style(s) for info about the individual issue in the main heading */
+		text-align: left;
+		font-weight: bolder;
+		font-size: 80%;
+		}
+	
+	#dsqitem .dsqurl { /* style(s) for the line in the heading presenting the url */
+		text-align: left;
+		font-weight: bolder;
+		font-size: 80%;
+		}
+	
+	#dsqitem .copyrightstmt { /* style(s) for copyright stmt */
+		font-size: 70%;
+		font-weight: normal;
+		}
+	
+#dsqitem h2 { /* styles for the title of the Article */
+	text-align: center;
+	font-weight: bold;
+	font-size: 120%;
+	}
+	
+	#dsqitem .headingforfeature { /* styles for the title of the Article */
+		text-align: left;
+		vertical-align: middle;
+	/*	border-bottom: thin solid #000099; */
+	/*	border-top: thin solid #000099; */
+		background-color: #009;
+		color: #fff;
+		margin: 1em 0em;
+		padding-top: 1em;
+		padding-bottom: .3em;
+		}
+		
+	#dsqitem .metadata-for-review { /* styles for the title of the Article */
+		text-align: left;
+		margin-left: 3em;
+		text-indent: -3em;
+		font-size: 115%;
+		font-weight: normal;
+		}
+		
+	#dsqitem .metadata-for-review p { /* styles for the title of the Article */
+		font-weight: normal;
+		}
+		
+	#dsqitem .metadata-for-review span { /* styles for the title of the Article */
+		display: inline;
+		margin-left: inherit;
+		font-size: 100%;
+		font-weight: normal;
+		}
+	
+#dsqitem h3, #dsqitem h3 * { /* styles for title(s) of Sections */
+	text-align: left;
+	font-weight: bold;
+	font-size: 115%;
+	}
+	
+#dsqitem h4, #dsqitem h4 * { /* styles for title(s) of Subsections */
+	text-align: left;
+	font-weight: bold;
+	font-size: 110%;
+	}
+	
+#dsqitem h5, #dsqitem h3 * { /* styles for title(s) of Subsections */
+	text-align: left;
+	font-weight: bold;
+	font-size: 105%;
+	}
+	
+#dsqitem p h3, #dsqitem p h4, #dsqitem p h5, #dsqitem p h6 { /* style to make headings within paragraphs, list items, etc., display inline */
+	display: inline;
+	color: navy;
+	}
+
+/* STYLES FOR MAJOR/CONSISTENT DIVISIONS OF THE ARTICLE */
+#dsqitem .metadata { /*to contain article title, author, etc.*/
+	}
+
+	#dsqitem .articletitle {
+		display: block;
+		font-size: 105%;
+		}
+	#dsqitem .articletitle * {
+		font-size: 105%;
+		}
+
+	#dsqitem .articleauthor {
+		margin-top: 1em;
+		text-align: left;
+		margin-left: 40%;
+		text-indent: -5%;
+		display: block;
+		font-size: 90%;
+		font-weight: 250;
+		}
+
+	#dsqitem .authoraffiliation {
+		text-align: left;
+		margin-left: 40%;
+		text-indent: -5%;
+		display: block;
+		font-size: 90%;
+		font-weight: normal;
+		}
+
+	#dsqitem .email {
+		text-align: left;
+		margin-left: 40%;
+		text-indent: -5%;
+		display: block;
+		font-size: 90%;
+		font-weight: normal;
+		}
+
+#dsqitem .abstract { /*to contain/identify, well, the abstract*/
+	margin-top: 1em;
+	margin-left: 3em;
+	}
+
+#dsqitem .abstract p { /* to italicize the text of the abstract */
+	font-style: italic;
+	}
+
+#dsqitem .abstract em { /* for de-italicizing titles, etc. in the abstract */
+	font-style: normal;
+	}
+
+#dsqitem .keywords { /*to contain/identify the keywords*/
+	}
+
+#dsqitem .article { /*to contain/identify the entire article*/
+	}
+
+#dsqitem .appendix { /*to contain/identify an additional section for one or more appendices*/
+	}
+
+#dsqitem div {
+	text-align: left;
+	}
+
+#dsqitem p {
+	text-align: left;
+	}
+
+#dsqitem .section { /*to contain/identify major sections of the article*/
+	}
+	#dsqitem .contributor_bio { /* for styles for paragraph bios of contributors */
+		font-style: italic;
+		margin-top: 1.4em;
+		margin-left: 3.5em;
+		}
+	#dsqitem .contributor_bio .contributor_name {
+		font-weight: bold;
+		}
+	#dsqitem .contributor_bio em {
+		font-style: normal;
+		}
+
+#dsqitem .subsection { /*to contain/identify second-level chunks of the article*/
+	margin-left: 2em;
+	}
+
+#dsqitem .subsubsection { /*to contain/identify third-level chunks of the article*/
+	margin-left: 2em;
+	}
+
+#dsqitem .commentary { /* style for commentary about the item included within the item - e.g., instructor's commentary on student papers */
+		margin-top: 3.5em;
+		margin-left: 3em;
+		padding: .5em 1.5em;
+		border: thin groove #bbb;
+		}
+
+#dsqitem .acknowledgment { /*to contain/identify the acknowledgement, wherever it may appear*/
+	font-style: italic;
+	text-align: center;
+	margin: 1em 3em 1em 3.5em;
+	}
+	
+#dsqitem .section_footer { /* to contain content at the bottom of a page */
+	font-weight: bold;
+	vertical-align: bottom;
+	border-top: thin solid #000099;
+	}
+
+/* Styles for Tables -- USE ONLY FOR ACTUAL DATA TABLES */
+#dsqitem table {
+	border: none;
+	}
+
+#dsqitem * table {
+	border: thin black solid;
+	border-collapse: collapse;
+	text-align: center;
+	margin-bottom: 2em;
+	}
+
+#dsqitem * table * th, #dsqitem * table * td {
+	vertical-align: top;
+	border: thin black solid;
+	text-align: left;
+	padding: .15em .3em;
+	}
+
+#dsqitem table caption {
+	text-align: left;
+	font-weight: bold;
+	font-size: 105%;
+	}
+
+#dsqitem .numeral {
+	text-align: center;
+	}
+
+#dsqitem .number {
+	text-align: right;
+	}
+
+#dsqitem .tablenote { /* styles for paragraphs containing notes about its data */
+	font-size: smaller;
+	margin-top: -.5em;
+	}
+	#dsqitem .tablenote .tablenotereflink { /* hide links to table notes from non-screen readers */
+		visibility: hidden;
+		}
+	#dsqitem .tablenote h3, #dsqitem .tablenote h4, #dsqitem .tablenote h5, #dsqitem .tablenote h6 { /* display label for notes for tables in line */
+		display: inline;
+		}
+
+/*STYLES FOR FORMATTING THE APPEARANCE OF TEXT, LINKS, AND SUCH*/
+#dsqitem img { /* general styles for all images */
+	border: thin solid black;
+	}
+
+#dsqitem .label { /*for identifying things like "Abstract: " and "Author: "*/
+	font-weight: bold;
+	}
+
+#dsqitem .article p { /*for basic paragraphs within the text of the article*/
+	line-height: 120%;
+	}
+
+#dsqitem .notabene { /*to contain special notes, qualifiers, warnings, etc */
+	font-style: italic;
+	text-align: left;
+	margin: 1em 3em 1em 3em;
+	}
+	
+#dsqitem .blockquote { /*to identify/contain blockquotes; defined as class, so either <p> or <div> can be used*/
+	margin-left: 4em;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	line-height: inherit;
+	display: block;
+	}
+
+#dsqitem .blockquote_poetry { /*to identify/contain blockquotes specifically from poems; defined as class, so either <p> or <div> can be used*/
+	margin-left: 4em;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	line-height: 145%;
+	display: block;
+	}
+	#dsqitem .blockquote_poetry .poem .stanza {
+		margin-top: 2.2em;
+		}
+	#dsqitem .blockquote_poetry .poem .stanza p {
+		margin-bottom: -1em;
+		}
+
+
+#dsqitem .blockquote_blog { /*to identify/contain blockquotes; defined as class, so either <p> or <div> can be used*/
+	margin-left: 4em;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	line-height: inherit;
+	display: block;
+	}
+
+#dsqitem .img_w_caption { /* style for paragraphs, etc. containing an image and a caption */
+	font-size: 75%;
+	font-weight: bold;
+	color: #000099;
+	float: left;
+	display: block;
+	}
+
+#dsqitem .illustration { /* style for graphs charts, etc. */
+	}
+
+	#dsqitem .illustration img { /* style for the graph, chart, etc. itself */
+		display: block;
+		}
+	
+	#dsqitem .illustration .caption { /* style for the caption itself */
+		font-size: 75%;
+		font-weight: bold;
+		color: #000099;
+		padding-left: 2em;
+		padding-right: 2em;
+		}
+
+#dsqitem .question { /* for interviews or other situations where there is a question and response */
+	color: #000099;
+	}
+
+#dsqitem .duedate { /* for any clump of text that identifies when something is due */
+	color: #ff0000;
+	font-weight: bold;
+	text-align: center;
+	padding: .6em;
+	border: thin solid black;
+	}
+
+#dsqitem .random { /* a style to render paragraphs that don't really belong in the section in which they've been placed */
+	clear: both;
+	}
+
+/* STYLES FOR VARIOUS LISTS */
+
+#dsqitem li h3, #dsqitem li h4, #dsqitem li h5, #dsqitem li h6 {
+	display: inline; /* headings within list items shouldn't start a new line automatically */
+	margin-right: .7em; /* a bit of space before the text follows */
+	}
+
+#dsqitem li {
+	margin-bottom: .4em; /* a little space following each list item */
+	}
+
+/* STYLES FOR THE WORKS CITED SYSTEM */
+#dsqitem .workscited { /*to contain/identify the whole works cited section*/
+	}
+
+	#dsqitem .workscited ul {
+		}
+		
+	#dsqitem .workscited li { /* for styles for items within the works cited list */
+		list-style: none;
+		margin-top: 1em;
+		text-indent: -3em;
+		}
+
+/* STYLES FOR THE ENDNOTE/REFERENCE SYSTEM */
+#dsqitem a.endnoteref { /*for references to endnotes -- may want also to define a span for these, but just this should work*/
+	text-decoration: underline;
+	font-weight: bold;
+	font-size: 90%;
+	}
+	
+#dsqitem .endnotes ol { /* a container to hold the works cited list */
+	list-style-type: decimal;
+	}
+
+#dsqitem li.endnote { /* to contain each individual cited work */
+	margin-top: 2em;
+	}
+
+/* STYLES FOR CREATIVE WRITING */
+#dsqitem .metadata_for_cw { /* class container for heading(s) for creative works */
+	margin-left: 20%;
+	}
+	#dsqitem .metadata_for_cw .author { /* author's name */
+		text-align: left;
+		text-indent: -5%;
+		display: block;
+		font-size: 115%;
+		font-weight: bold;
+	}
+
+	#dsqitem .metadata_for_cw .email { /* author's name */
+		text-align: left;
+		margin-left: 0%;
+		text-indent: -5%;
+		display: block;
+		font-size: 100%;
+		font-weight: normal;
+	}
+
+#dsqitem .epigraph { /* to contain epigraphs and initial quotations */
+	font-style: italic;
+		margin-top: 2em;
+		margin-left: 3em;
+	}
+	#dsqitem .epigraph .epigraph-author { /*to contain name, etc. of who wrote the epigraph */
+		display: block;
+		margin-top: 1em;
+		margin-left: 3em;
+		font-style: normal;
+		}
+
+#dsqitem div.sequence {
+	margin-bottom: 2em;
+	}
+	#dsqitem .sequence .sequence_title {
+	text-align: left;
+	margin-top: 2em;
+	margin-left: 4em;
+	font-size: 125%;
+	}
+	
+#dsqitem .poem {
+	margin-bottom: 4em;
+	}
+	#dsqitem .poem .articletitle { /* styles for the sub-headings */
+		text-align: left;
+		font-weight: bold;
+		font-size: 105%;
+		}
+	#dsqitem .poem pre {
+		font-family: Arial, Helvetica, sans-serif;
+		}
+	#dsqitem .poem .stanza {
+		margin-top: 2.2em;
+		}
+	#dsqitem .poem .stanza p {
+		margin-bottom: -1em;
+		}
+	#dsqitem .poem .epigraph {
+		margin-left: 1.5em;
+		line-height: 1em;
+		}
+	#dsqitem .poem .stanza p .tab {
+		margin-right: 3em;
+		}
+	#dsqitem .poem .commentary {
+		margin-top: 3.5em;
+		margin-left: 3em;
+		padding: .5em 1.5em;
+		border: thin groove #bbb;
+		}
+		#dsqitem .poem .commentary h4 {
+			margin-top: .5em;
+			font-size: 100%;
+			}
+
+#dsqitem .tabbed { /* random style for adding tabs : <span class="tabbed">, or whatever */
+	margin-left: 3em;
+	}
+	
+#dsqitem .dialogue { /* styles for formatting transcripts of oral exchanges -- same basic layout as blockquote */
+	margin-left: 2em;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	line-height: inherit;
+	display: block;
+	}
+
+#dsqitem .dialogue p { /* hanging indent for individual exchanges */
+	margin-left: 2em;
+	}
+
+#dsqitem .dialogue p .speaker { /*for the name of the person speaking */
+	display: inline; /* in case you want to use header tags for this */
+	font-weight: bold;
+	margin-left: -2em;
+	}
+
+/* added for 28.4 */
+/* STYLES SPECIFIC TO, OR ADDED FOR, V.28 NO.4 FALL 2008 */
+
+#dsqitem .endnotes_multiple { /* a class, instead of the previously used id, for items that have more than one section with footnotes */
+	}
+
+#dsqitem .endnotes_multiple ol { /* a container to hold the works cited list */
+	list-style-type: decimal;
+	}
+
+#dsqitem .workscited_multiple { /* a class, instead of the previously used id, for items that have more than one section with works cited */
+	}
+	#dsqitem .workscited_multiple ul {
+	}
+	#dsqitem .workscited_multiple li { /* for styles for items within the works cited list */
+	list-style: none;
+	margin-top: 1em;
+	text-indent: -3em;
+	}
+
+	#dsqitem .contributor_bios { /* class instead of div -- for styles for paragraph bios of contributors */
+		font-style: italic;
+		margin-top: 1.4em;
+		margin-left: 3.5em;
+		}
+	#dsqitem .contributor_bios .contributor_name {
+		font-weight: bold;
+		}
+	#dsqitem .contributor_bios em {
+		font-style: normal;
+		}
+	
+#dsqitem .img_w_caption {
+	margin-right: 15px;
+	}
+
+#dsqitem .pull_quote {
+	border: thin solid blue;
+	background-color: #ccc;
+	padding: 0em 1em 1em 1em;
+	float: right;
+	width: 200px;
+	}
+
+#dsqitem .metadata_for_cw .authoraffiliation { /* so that affiliation lines up consistently */
+	text-align: left;
+	margin-left: 0%;
+	text-indent: -5%;
+	}
+#dsqitem .metadata_for_cw * { /* so that everything lines up consistently */
+	text-align: left;
+	margin-left: 0%;
+	text-indent: -5%;
+	}
+#dsqitem .metadata_for_cw .articletitle { /* to display larger */
+	font-size: 120%;
+	}
+
+/* added for 29.1 */
+/* style for lengthy blockquotes that should be highlighted with border, etc. */
+#dsqitem .boxquote { border: thin solid blue; background-color: #eeeeee; padding: 5px 15px; }
+
+/* 1/12/09: deleted styles for individual articles and such, since OJS allows for these to be uploaded alongside thos articles, etc. */
+
+#main #content .tocSectionTitle {
+	font-size: 150%;
+	font-family: arial, helvetica, helvetica-neue, sans-serif;
+	font-weight: bold;
+	color: #222222;
+	border: none;
+	}
