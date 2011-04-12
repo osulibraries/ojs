@@ -729,7 +729,13 @@ BELOW THIS LINE ARE STYLES FOR dsq ITEMS
 	font-size: 110%;
 	}
 	
-#dsqitem h5, #dsqitem h3 * { /* styles for title(s) of Subsections */
+#dsqitem h5, #dsqitem h5 * { /* styles for title(s) of Subsections */
+	text-align: left;
+	font-weight: bold;
+	font-size: 105%;
+	}
+	
+#dsqitem h6, #dsqitem h6 * { /* styles for title(s) of Subsections */
 	text-align: left;
 	font-weight: bold;
 	font-size: 105%;
@@ -829,7 +835,11 @@ BELOW THIS LINE ARE STYLES FOR dsq ITEMS
 	}
 
 #dsqitem .subsubsection { /*to contain/identify third-level chunks of the article*/
-	margin-left: 2em;
+	margin-left: 3em;
+	}
+
+#dsqitem .subsubsubsection { /*to contain/identify third-level chunks of the article*/
+	margin-left: 4em;
 	}
 
 #dsqitem .commentary { /* style for commentary about the item included within the item - e.g., instructor's commentary on student papers */
@@ -888,6 +898,9 @@ BELOW THIS LINE ARE STYLES FOR dsq ITEMS
 	font-size: smaller;
 	margin-top: -.5em;
 	}
+	#dsqitem .tablenoteref { /* styles for paragraphs containing notes about its data */
+		font-size: smaller;
+		}
 	#dsqitem .tablenote .tablenotereflink { /* hide links to table notes from non-screen readers */
 		visibility: hidden;
 		}
@@ -929,7 +942,7 @@ BELOW THIS LINE ARE STYLES FOR dsq ITEMS
 	line-height: 145%;
 	display: block;
 	}
-	#dsqitem .blockquote_poetry .poem .stanza {
+	#dsqitem .blockquote_poetry .poem .stanza, #dsqitem .blockquote_poetry .stanza {
 		margin-top: 2.2em;
 		}
 	#dsqitem .blockquote_poetry .poem .stanza p {
