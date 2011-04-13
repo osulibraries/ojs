@@ -501,7 +501,7 @@ table.tocArticle td.tocTitle a, table.tocArticle.span td.tocTitle{
 	background:#fff;
 	padding:0 3px 0 0;
 	float:left;
-	position:absolute;
+	/*position:absolute;*/
 	text-decoration:none;
 }
 
