@@ -1016,7 +1016,7 @@ BELOW THIS LINE ARE STYLES FOR dsq ITEMS
 	#dsqitem .workscited li { /* for styles for items within the works cited list */
 		list-style: none;
 		margin-top: 1em;
-		text-indent: -3em;
+		text-indent: -2.5em;
 		}
 
 /* STYLES FOR THE ENDNOTE/REFERENCE SYSTEM */
