@@ -364,16 +364,17 @@ body {
 	margin-left: -1.1em;
 	overflow: auto;
 	border: 3px solid gray;
+	clear: left;
+	margin: 0 auto;
 	*/
 	display: block;
 	list-style-type: square;
 	text-align: left;
 	background-color: #fefefe;
-	margin: 0 auto;
 	border: none;
 	padding-top: 2em;
 	padding-bottom: 2em;
-	clear: left;
+	margin-bottom: 20px;
 	}
 #container #navbar * {
 	/* added per editor request 9/21/2009 */
@@ -386,7 +387,6 @@ body {
 	}
 
 	#navbar ul {
-		width: 790px;
 		height: 100%;
 		border: none;
 		padding: 0px;
@@ -427,6 +427,7 @@ body {
 	padding: 0;
 	clear: left;
 	*/
+	display: block;
 	text-transform: capitalize;
 	font-size: 0.575em;
 	color: #555555;
