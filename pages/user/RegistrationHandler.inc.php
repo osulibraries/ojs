@@ -186,6 +186,7 @@ class RegistrationHandler extends UserHandler {
                 $akismet = new Akismet($MyBlogURL ,$WordPressAPIKey);
 
                 $combinedName = $regForm->getData('firstName') . ' ' . $regForm->getData('middleName') . ' ' . $regForm->getData('lastName');
+		//$combinedName = 'viagra-test-123';
                 $akismet->setCommentAuthor($combinedName);
                 $akismet->setCommentAuthorEmail($regForm->getData('email'));
                 $akismet->setCommentAuthorURL($regForm->getData('userUrl'));
@@ -193,8 +194,8 @@ class RegistrationHandler extends UserHandler {
 
                 if($akismet->isCommentSpam()) {
                     $this->registrationDisabled();
-                    exit;
-                    //return false;
+                    //exit;
+                    return false;
                     // store the comment but mark it as spam (in case of a mis-diagnosis)
                 } else {
                     return true;
