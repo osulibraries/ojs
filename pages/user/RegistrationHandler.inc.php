@@ -73,7 +73,8 @@ class RegistrationHandler extends UserHandler {
 		}
 		$regForm->readInputData();
 
-		if ($regForm->validate()) {
+		if ($regForm->validate() && $this->validateAkismet($regForm)) {
+
 			$regForm->execute();
 			if (Config::getVar('email', 'require_validation')) {
 				// Send them home; they need to deal with the
@@ -175,6 +176,33 @@ class RegistrationHandler extends UserHandler {
 			}
 		}
 	}
+
+        public function validateAkismet($regForm = array()) {
+            //Insert AKISMET code here.
+                import('classes.user.form.Akismet');
+
+                $WordPressAPIKey = '0328f354de4f';
+                $MyBlogURL = 'http://libeas01.it.ohio-state.edu/ojs/';
+                $akismet = new Akismet($MyBlogURL ,$WordPressAPIKey);
+
+                $combinedName = $regForm->getData('firstName') . ' ' . $regForm->getData('middleName') . ' ' . $regForm->getData('lastName');
+		//$combinedName = 'viagra-test-123';
+                $akismet->setCommentAuthor($combinedName);
+                $akismet->setCommentAuthorEmail($regForm->getData('email'));
+                $akismet->setCommentAuthorURL($regForm->getData('userUrl'));
+                $akismet->setCommentType('registration');
+
+                if($akismet->isCommentSpam()) {
+                    $this->registrationDisabled();
+                    //exit;
+                    return false;
+                    // store the comment but mark it as spam (in case of a mis-diagnosis)
+                } else {
+                    return true;
+                    // store the comment normally
+                }
+
+        }
 }
 
 ?>
