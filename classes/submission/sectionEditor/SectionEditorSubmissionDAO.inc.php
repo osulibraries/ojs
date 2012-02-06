@@ -1010,7 +1010,9 @@ class SectionEditorSubmissionDAO extends DAO {
 		);
 		while (!$result->EOF) {
 			$row = $result->GetRowAssoc(false);
-			if (!isset($statistics[$row['reviewer_id']])) $statistics[$row['editor_id']] = array();
+			if (!isset($statistics[$row['reviewer_id']])) {
+                $statistics[$row['reviewer_id']] = array();
+            }
 			$statistics[$row['reviewer_id']]['last_notified'] = $this->datetimeFromDB($row['last_notified']);
 			$result->MoveNext();
 		}
