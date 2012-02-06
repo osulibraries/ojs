@@ -209,6 +209,7 @@ class JournalSetupStep5Form extends JournalSetupForm {
 		$fileManager = new PublicFileManager();
 		if ($fileManager->uploadedFileExists($settingName)) {
 			$type = $fileManager->getUploadedFileType($settingName);
+			error_log($type);
 			if ($type != 'text/plain' && $type != 'text/css' && $type != 'text/x-c') {
 				return false;
 			}
