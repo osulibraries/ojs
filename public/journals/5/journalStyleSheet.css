@@ -6,7 +6,7 @@ body {
 }
 
 a:link {
-	color: #036564;
+	color: #4B0523;
 }
 
 a:active {
@@ -14,7 +14,7 @@ a:active {
 }
 
 a:visited {
-	color: #036564;
+	color: #4B0523;
 }
 
 a:hover {
@@ -32,7 +32,7 @@ input.defaultButton {
 }
 
 #header {
-	background-color: #036564;
+	background-color: #4B0523;
 }
 
 #header h1 {
