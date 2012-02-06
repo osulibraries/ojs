@@ -737,76 +737,84 @@ class SectionEditorSubmissionDAO extends DAO {
 	 * @param $rangeInfo RangeInfo optional
 	 * @return DAOResultFactory containing matching Users
 	 */
-	function &getReviewersForArticle($journalId, $articleId, $round, $searchType = null, $search = null, $searchMatch = null, $rangeInfo = null, $sortBy = null, $sortDirection = SORT_DIRECTION_ASC) {
-		$paramArray = array($articleId, $round, ASSOC_TYPE_USER, 'interest', $journalId, RoleDAO::getRoleIdFromPath('reviewer'));
-		$searchSql = '';
+    function &getReviewersForArticle($journalId, $articleId, $round, $searchType = null, $search = null, $searchMatch = null, $rangeInfo = null, $sortBy = null, $sortDirection = SORT_DIRECTION_ASC) {
+        $paramArray = array('interests', $articleId, $round, $journalId, RoleDAO::getRoleIdFromPath('reviewer'));
+        $searchSql = '';
 
-		$searchTypeMap = array(
-			USER_FIELD_FIRSTNAME => 'u.first_name',
-			USER_FIELD_LASTNAME => 'u.last_name',
-			USER_FIELD_USERNAME => 'u.username',
-			USER_FIELD_EMAIL => 'u.email',
-			USER_FIELD_INTERESTS => 'cves.setting_value'
-			);
+        if (isset($search)) switch ($searchType) {
+            case USER_FIELD_USERID:
+                $searchSql = 'AND user_id=?';
+                $paramArray[] = $search;
+                break;
+            case USER_FIELD_FIRSTNAME:
+                $searchSql = 'AND LOWER(first_name) ' . ($searchMatch=='is'?'=':'LIKE') . ' LOWER(?)';
+                $paramArray[] = ($searchMatch=='is'?$search:'%' . $search . '%');
+                break;
+            case USER_FIELD_LASTNAME:
+                $searchSql = 'AND LOWER(last_name) ' . ($searchMatch=='is'?'=':'LIKE') . ' LOWER(?)';
+                $paramArray[] = ($searchMatch=='is'?$search:'%' . $search . '%');
+                break;
+            case USER_FIELD_USERNAME:
+                $searchSql = 'AND LOWER(username) ' . ($searchMatch=='is'?'=':'LIKE') . ' LOWER(?)';
+                $paramArray[] = ($searchMatch=='is'?$search:'%' . $search . '%');
+                break;
+            case USER_FIELD_EMAIL:
+                $searchSql = 'AND LOWER(email) ' . ($searchMatch=='is'?'=':'LIKE') . ' LOWER(?)';
+                $paramArray[] = ($searchMatch=='is'?$search:'%' . $search . '%');
+                break;
+            case USER_FIELD_INTERESTS:
+                $paramArray = array('interests', $articleId, $round, ASSOC_TYPE_USER, 'interest', $journalId, RoleDAO::getRoleIdFromPath('reviewer') );
 
-		if (isset($search) && isset($searchTypeMap[$searchType])) {
-			$fieldName = $searchTypeMap[$searchType];
-			switch ($searchMatch) {
-				case 'is':
-					$searchSql = "AND LOWER($fieldName) = LOWER(?)";
-					$paramArray[] = $search;
-					break;
-				case 'contains':
-					$searchSql = "AND LOWER($fieldName) LIKE LOWER(?)";
-					$paramArray[] = '%' . $search . '%';
-					break;
-				case 'startsWith':
-					$searchSql = "AND LOWER($fieldName) LIKE LOWER(?)";
-					$paramArray[] = $search . '%';
-					break;
-			}
-		} elseif (isset($search)) switch ($searchType) {
-			case USER_FIELD_USERID:
-				$searchSql = 'AND user_id=?';
-				$paramArray[] = $search;
-				break;
-			case USER_FIELD_INITIAL:
-				$searchSql = 'AND (LOWER(last_name) LIKE LOWER(?) OR LOWER(username) LIKE LOWER(?))';
-				$paramArray[] = $search . '%';
-				$paramArray[] = $search . '%';
-				break;
-		}
+                $searchSql = 'AND LOWER(cves.setting_value) ' . ($searchMatch=='is'?'=':'LIKE') . ' LOWER(?)';
+                $paramArray[] = ($searchMatch=='is'?$search:'%' . $search . '%');
 
-		$result =& $this->retrieveRange(
-			'SELECT DISTINCT
-				u.user_id,
-				u.last_name,
-				ar.review_id,
-				AVG(ra.quality) AS average_quality,
-				COUNT(ac.review_id) AS completed,
-				COUNT(ai.review_id) AS incomplete,
-				MAX(ac.date_notified) AS latest,
-				AVG(ac.date_completed-ac.date_notified) AS average
-			FROM	users u
-			  LEFT JOIN review_assignments ra ON (ra.reviewer_id = u.user_id)
-				LEFT JOIN review_assignments ac ON (ac.reviewer_id = u.user_id AND ac.date_completed IS NOT NULL)
-				LEFT JOIN review_assignments ai ON (ai.reviewer_id = u.user_id AND ai.date_completed IS NULL)
-				LEFT JOIN review_assignments ar ON (ar.reviewer_id = u.user_id AND ar.cancelled = 0 AND ar.submission_id = ? AND ar.round = ?)
-				LEFT JOIN roles r ON (r.user_id = u.user_id)
-				LEFT JOIN articles a ON (ra.submission_id = a.article_id)
-				LEFT JOIN controlled_vocabs cv ON (cv.assoc_type = ? AND cv.assoc_id = u.user_id AND cv.symbolic = ?)
-				LEFT JOIN controlled_vocab_entries cve ON (cve.controlled_vocab_id = cv.controlled_vocab_id)
-				LEFT JOIN controlled_vocab_entry_settings cves ON (cves.controlled_vocab_entry_id = cve.controlled_vocab_entry_id)
-			WHERE u.user_id = r.user_id AND
-				r.journal_id = ? AND
-				r.role_id = ? ' . $searchSql . 'GROUP BY u.user_id, u.last_name, ar.review_id' .
-			($sortBy?(' ORDER BY ' . $this->getSortMapping($sortBy) . ' ' . $this->getDirectionMapping($sortDirection)) : ''),
-			$paramArray, $rangeInfo
-		);
+                $result = &$this->retrieveRange(
+                    'SELECT DISTINCT
+                        u.*,
+                        a.reviewer_id
+                        FROM	users u
+                        LEFT JOIN user_settings s ON (u.user_id = s.user_id AND s.setting_name = ?)
+                        LEFT JOIN roles r ON (r.user_id = u.user_id)
+                        LEFT JOIN review_assignments a ON (a.reviewer_id = u.user_id AND a.cancelled = 0 AND a.submission_id = ? AND a.round = ?)
 
-		$returner = new DAOResultFactory($result, $this, '_returnReviewerUserFromRow');
-		return $returner;
-	}
+                        LEFT JOIN controlled_vocabs cv ON (cv.assoc_type = ? AND cv.assoc_id = u.user_id AND cv.symbolic = ?)
+                        LEFT JOIN controlled_vocab_entries cve ON (cve.controlled_vocab_id = cv.controlled_vocab_id)
+                        LEFT JOIN controlled_vocab_entry_settings cves ON (cves.controlled_vocab_entry_id = cve.controlled_vocab_entry_id)
+
+                        WHERE	u.user_id = r.user_id AND
+                        r.journal_id = ? AND
+                        r.role_id = ? ' . $searchSql . '
+                        ORDER BY last_name, first_name',
+                    $paramArray, $rangeInfo
+                );
+
+                break;
+            case USER_FIELD_INITIAL:
+                $searchSql = 'AND (LOWER(last_name) LIKE LOWER(?) OR LOWER(username) LIKE LOWER(?))';
+                $paramArray[] = $search . '%';
+                $paramArray[] = $search . '%';
+                break;
+        }
+        if($searchType != USER_FIELD_INTERESTS){
+            $result = &$this->retrieveRange(
+                'SELECT DISTINCT
+                    u.*,
+                    a.reviewer_id
+                    FROM	users u
+                    LEFT JOIN user_settings s ON (u.user_id = s.user_id AND s.setting_name = ?)
+                    LEFT JOIN roles r ON (r.user_id = u.user_id)
+                    LEFT JOIN review_assignments a ON (a.reviewer_id = u.user_id AND a.cancelled = 0 AND a.submission_id = ? AND a.round = ?)
+                    WHERE	u.user_id = r.user_id AND
+                    r.journal_id = ? AND
+                    r.role_id = ? ' . $searchSql . '
+                    ORDER BY last_name, first_name',
+                $paramArray, $rangeInfo
+            );
+        }
+
+        $returner = &new DAOResultFactory($result, $this, '_returnReviewerUserFromRow');
+        return $returner;
+    }
 
 	function &_returnReviewerUserFromRow(&$row) { // FIXME
 		$user =& $this->userDao->getUser($row['user_id']);
