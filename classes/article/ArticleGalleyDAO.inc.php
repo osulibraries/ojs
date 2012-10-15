@@ -189,7 +189,11 @@ class ArticleGalleyDAO extends DAO {
 		$galley->setLocale($row['locale']);
 		$galley->setFileId($row['file_id']);
 		$galley->setLabel($row['label']);
-		$galley->setType($row['type']);
+
+        if(isset($row['type'])) {
+            $galley->setType($row['type']);
+        }
+
 		$galley->setSequence($row['seq']);
 		$galley->setViews($row['views']);
 
