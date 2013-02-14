@@ -138,6 +138,7 @@ class RegistrationForm extends Form {
 	 */
 	function initData() {
 		$this->setData('registerAsReader', 1);
+        $this->setData('registerAsAuthor', 1);
 		$this->setData('existingUser', $this->existingUser);
 		$this->setData('userLocales', array());
 		$this->setData('sendPassword', 1);
