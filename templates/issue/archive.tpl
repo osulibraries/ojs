@@ -49,6 +49,12 @@
 {else}
 	{translate key="current.noCurrentIssueDesc"}
 {/if}
+
+{if $siteTitle == "Empirical Musicology Review"}
+    {* @TODO, Refactor into a proper hook. Also, would be safer to use a code, instead of text match. i.e. $currentJournal->getPath()";  *}
+    <p> Volumes 1 through 7 (2006-2012) are archived in the <a href="http://hdl.handle.net/1811/5916">Knowledge Bank: Empirical Musicology Review Archives</a></a>.</p>
+{/if}
+
 </div>
 {include file="common/footer.tpl"}
 
